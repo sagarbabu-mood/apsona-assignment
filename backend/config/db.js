@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
+const username = encodeURIComponent("sagarbabus");
+const password = encodeURIComponent("1922@guruvu");
+
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/notes-app';
+    const mongoURI = `mongodb+srv://${username}:${password}@cluster0.xphhmog.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
     await mongoose.connect(mongoURI);
     console.log('MongoDB connected...');
   } catch (err) {
